@@ -6,3 +6,4 @@ env/
 *.keras
 .ipynb_checkpoints/
 data/
+pdr_env/
