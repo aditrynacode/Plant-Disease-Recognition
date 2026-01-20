@@ -39,6 +39,12 @@ AUTOTUNE = tf.data.AUTOTUNE
 training_ds = training_ds.cache().prefetch(buffer_size=AUTOTUNE)
 validation_ds = validation_ds.cache().prefetch(buffer_size=AUTOTUNE)
 
+data_augmentation = tf.keras.Sequential([
+    tf.keras.layers.RandomFlip("horizontal"),
+    tf.keras.layers.RandomRotation(0.1),
+    tf.keras.layers.RandomZoom(0.1),
+])
+
 model = keras.Sequential([
     keras.layers.Conv2D(64, (3, 3), activation = 'relu', input_shape = (256, 256, 3)),
     keras.layers.MaxPooling2D(2,2),
@@ -46,7 +52,7 @@ model = keras.Sequential([
     keras.layers.Conv2D(64, (3, 3), activation = 'relu'),
     keras.layers.MaxPooling2D(2,2),
 
-    keras.layers.Conv2D(64, (3, 3), activation = 'relu'),
+    keras.layers.Conv2D(128, (3, 3), activation = 'relu'),
     keras.layers.MaxPooling2D(2,2),
 
     keras.layers.Flatten(),
@@ -60,7 +66,26 @@ model.compile(
     metrics = ['accuracy']
 )
 
-model.fit(training_ds, validation_data = validation_ds, epochs = 10)
+early_stop = tf.keras.callbacks.EarlyStopping(
+    monitor="val_accuracy",
+    patience=3,
+    restore_best_weights=True
+)
+
+checkpoint = tf.keras.callbacks.ModelCheckpoint(
+    "model/pdr_model.keras",
+    monitor="val_accuracy",
+    save_best_only=True,
+    mode="max",
+    verbose=1
+)
+
+history = model.fit(
+    training_ds, 
+    validation_data = validation_ds, 
+    epochs = 50,
+    callbacks=[early_stop, checkpoint]
+)
 
 test_loss, test_acc = model.evaluate(test_ds)
 print("Test Loss:", test_loss)
