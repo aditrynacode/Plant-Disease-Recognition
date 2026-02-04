@@ -92,4 +92,4 @@ history = model.fit(
 
 test_loss, test_acc = model.evaluate(test_ds)
 print("Test Loss:", test_loss)
-print("Test Accuracy:", test_acc)
+print("Test Accuracy:", test_acc) 
