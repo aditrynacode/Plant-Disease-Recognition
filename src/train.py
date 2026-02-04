@@ -49,10 +49,13 @@ model = keras.Sequential([
     keras.layers.Conv2D(64, (3, 3), activation = 'relu', input_shape = (256, 256, 3)),
     keras.layers.MaxPooling2D(2,2),
 
-    keras.layers.Conv2D(64, (3, 3), activation = 'relu'),
+    keras.layers.Conv2D(128, (3, 3), activation = 'relu'),
     keras.layers.MaxPooling2D(2,2),
 
-    keras.layers.Conv2D(128, (3, 3), activation = 'relu'),
+    keras.layers.Conv2D(256, (3, 3), activation = 'relu'),
+    keras.layers.MaxPooling2D(2,2),
+
+    keras.layers.Conv2D(512, (3, 3), activation = 'relu'),
     keras.layers.MaxPooling2D(2,2),
 
     keras.layers.Flatten(),
@@ -68,7 +71,7 @@ model.compile(
 
 early_stop = tf.keras.callbacks.EarlyStopping(
     monitor="val_accuracy",
-    patience=3,
+    patience=5,
     restore_best_weights=True
 )
 
