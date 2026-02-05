@@ -1,7 +1,21 @@
+import os
 import numpy as np
+import logging
 import tensorflow as tf
 from tensorflow import keras
 import matplotlib.pyplot as plt
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+log_path = os.path.join(BASE_DIR, "outputs/logs/train.log")
+
+logging.basicConfig(
+    filename=log_path,
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+logging.info("Training started")
 
 img_size = (256,256)
 batch = 32
@@ -93,3 +107,13 @@ history = model.fit(
 test_loss, test_acc = model.evaluate(test_ds)
 print("Test Loss:", test_loss)
 print("Test Accuracy:", test_acc) 
+
+plt.plot(history.history["loss"], label="Train Loss")
+plt.plot(history.history["val_loss"], label="Val Loss")
+plt.legend()
+
+plot_path = os.path.join(BASE_DIR, "outputs/plots/loss_curve.png")
+plt.savefig(plot_path)
+plt.close()
+
+logging.info("Loss curve saved")
