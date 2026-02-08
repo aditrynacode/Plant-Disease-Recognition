@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+os.makedirs(os.path.join(BASE_DIR, "outputs/logs"), exist_ok=True)
 log_path = os.path.join(BASE_DIR, "outputs/logs/train.log")
 
 logging.basicConfig(
@@ -60,7 +61,10 @@ data_augmentation = tf.keras.Sequential([
 ])
 
 model = keras.Sequential([
-    keras.layers.Conv2D(64, (3, 3), activation = 'relu', input_shape = (256, 256, 3)),
+    keras.layers.Input(shape = (256, 256, 3)),
+    data_augmentation,
+
+    keras.layers.Conv2D(64, (3, 3), activation = 'relu'),
     keras.layers.MaxPooling2D(2,2),
 
     keras.layers.Conv2D(128, (3, 3), activation = 'relu'),
@@ -103,6 +107,17 @@ history = model.fit(
     epochs = 50,
     callbacks=[early_stop, checkpoint]
 )
+
+train_accuracy = history.history["accuracy"]
+validation_accuracy = history.history["val_accuracy"]
+
+start_epoch = max(0, len(train_accuracy)-5)
+
+for i in range(start_epoch, len(train_accuracy)):
+    logging.info(
+        f"Epoch {i + 1} - Train Acc: {train_accuracy[i]:.4f}, "
+        f"Val Acc: {validation_accuracy[i]:.4f}"
+    )
 
 test_loss, test_acc = model.evaluate(test_ds)
 print("Test Loss:", test_loss)
