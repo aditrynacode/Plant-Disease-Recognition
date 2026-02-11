@@ -7,7 +7,7 @@ model = tf.keras.models.load_model("model/pdr_model.keras")
 
 test_ds = tf.keras.utils.image_dataset_from_directory(
     "data/test",
-    image_size = (256, 256),
+    image_size = (224,224),
     batch_size = 32,
     shuffle = False
 )
