@@ -19,7 +19,7 @@ test_ds = test_ds.map(lambda x, y: (normalizer(x), y))
 
 image = "data/test/healthy/8ddd5ec1c0de38c4.jpg"  #paste image source here
 
-img = tf.keras.utils.load_img(image, target_size=(256, 256))
+img = tf.keras.utils.load_img(image, target_size=(224, 224))
 img = tf.keras.utils.img_to_array(img)   
 img = img / 255          
 img = tf.expand_dims(img, axis=0)      
