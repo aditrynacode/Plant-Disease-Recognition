@@ -123,6 +123,8 @@ test_loss, test_acc = model.evaluate(test_ds)
 print("Test Loss:", test_loss)
 print("Test Accuracy:", test_acc) 
 
+logging.info(f"Test Accuracy: {test_acc: .4f}.")
+
 plt.plot(history.history["loss"], label="Train Loss")
 plt.plot(history.history["val_loss"], label="Val Loss")
 plt.legend()

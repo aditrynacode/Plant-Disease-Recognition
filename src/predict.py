@@ -17,7 +17,7 @@ class_names = test_ds.class_names
 normalizer = tf.keras.layers.Rescaling(1/255)
 test_ds = test_ds.map(lambda x, y: (normalizer(x), y))
 
-image = "data/test/powdery/81a63d7ef8245a72.jpg"
+image = "data/test/healthy/8ddd5ec1c0de38c4.jpg"  #paste image source here
 
 img = tf.keras.utils.load_img(image, target_size=(256, 256))
 img = tf.keras.utils.img_to_array(img)   

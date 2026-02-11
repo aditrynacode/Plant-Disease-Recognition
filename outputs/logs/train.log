@@ -1,5 +1,3 @@
-2026-02-05 15:36:31,038 - INFO - Training started
-2026-02-05 15:43:01,528 - INFO - Loss curve saved
 2026-02-05 20:33:15,378 - INFO - Training started
 2026-02-05 20:38:39,120 - INFO - Epoch 4 - Train Acc: 0.9054, Val Acc: 0.8000
 2026-02-05 20:38:39,120 - INFO - Epoch 5 - Train Acc: 0.9168, Val Acc: 0.8667
@@ -35,31 +33,11 @@
 2026-02-06 00:11:30,011 - INFO - Epoch 26 - Train Acc: 0.9554, Val Acc: 0.7333
 2026-02-06 00:11:31,536 - INFO - Test Accuracy: 0.8667
 2026-02-06 00:11:31,953 - INFO - Loss curve saved
-2026-02-06 00:16:11,067 - INFO - Training started
-2026-02-06 00:24:41,723 - INFO - Epoch 9 - Train Acc: 0.9402, Val Acc: 0.9500
-2026-02-06 00:24:41,723 - INFO - Epoch 10 - Train Acc: 0.9448, Val Acc: 0.9000
-2026-02-06 00:24:41,723 - INFO - Epoch 11 - Train Acc: 0.9501, Val Acc: 0.9333
-2026-02-06 00:24:41,723 - INFO - Epoch 12 - Train Acc: 0.9607, Val Acc: 0.9333
-2026-02-06 00:24:41,723 - INFO - Epoch 13 - Train Acc: 0.9554, Val Acc: 0.9500
-2026-02-06 00:24:43,586 - INFO - Loss curve saved
-2026-02-06 00:27:43,747 - INFO - Training started
-2026-02-06 00:36:53,037 - INFO - Epoch 10 - Train Acc: 0.9357, Val Acc: 0.9333
-2026-02-06 00:36:53,038 - INFO - Epoch 11 - Train Acc: 0.9501, Val Acc: 0.9333
-2026-02-06 00:36:53,038 - INFO - Epoch 12 - Train Acc: 0.9289, Val Acc: 0.9000
-2026-02-06 00:36:53,038 - INFO - Epoch 13 - Train Acc: 0.9365, Val Acc: 0.9333
-2026-02-06 00:36:53,038 - INFO - Epoch 14 - Train Acc: 0.9440, Val Acc: 0.8833
-2026-02-06 00:36:54,889 - INFO - Loss curve saved
-2026-02-06 00:37:00,821 - INFO - Training started
-2026-02-06 00:44:14,453 - INFO - Epoch 7 - Train Acc: 0.9402, Val Acc: 0.9167
-2026-02-06 00:44:14,453 - INFO - Epoch 8 - Train Acc: 0.9395, Val Acc: 0.8333
-2026-02-06 00:44:14,453 - INFO - Epoch 9 - Train Acc: 0.9433, Val Acc: 0.9333
-2026-02-06 00:44:14,453 - INFO - Epoch 10 - Train Acc: 0.9501, Val Acc: 0.9333
-2026-02-06 00:44:14,453 - INFO - Epoch 11 - Train Acc: 0.9357, Val Acc: 0.9333
-2026-02-06 00:44:16,180 - INFO - Loss curve saved
-2026-02-06 01:08:18,143 - INFO - Training started
-2026-02-06 01:16:11,101 - INFO - Epoch 8 - Train Acc: 0.9418, Val Acc: 0.9167
-2026-02-06 01:16:11,101 - INFO - Epoch 9 - Train Acc: 0.9463, Val Acc: 0.9333
-2026-02-06 01:16:11,101 - INFO - Epoch 10 - Train Acc: 0.9425, Val Acc: 0.9167
-2026-02-06 01:16:11,101 - INFO - Epoch 11 - Train Acc: 0.9380, Val Acc: 0.9333
-2026-02-06 01:16:11,101 - INFO - Epoch 12 - Train Acc: 0.9274, Val Acc: 0.9000
-2026-02-06 01:16:13,449 - INFO - Loss curve saved
+2026-02-11 19:32:00,114 - INFO - Training started
+2026-02-11 19:43:04,621 - INFO - Epoch 9 - Train Acc: 0.9418, Val Acc: 0.9167
+2026-02-11 19:43:04,630 - INFO - Epoch 10 - Train Acc: 0.9554, Val Acc: 0.8667
+2026-02-11 19:43:04,630 - INFO - Epoch 11 - Train Acc: 0.9470, Val Acc: 0.9500
+2026-02-11 19:43:04,630 - INFO - Epoch 12 - Train Acc: 0.9584, Val Acc: 0.9333
+2026-02-11 19:43:04,630 - INFO - Epoch 13 - Train Acc: 0.9599, Val Acc: 0.9500
+2026-02-11 19:43:06,870 - INFO - Test Accuracy:  0.9133.
+2026-02-11 19:43:08,232 - INFO - Loss curve saved
